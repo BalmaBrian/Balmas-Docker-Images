@@ -1,0 +1,23 @@
+{
+  "name": "ytdl-layr-backend",
+  "version": "1.0.0",
+  "author": "Brian Almaguer (Haro)",
+  "license": "ISC",
+  "description": "Docker focused Backend server for making downloads on youtube.",
+  "scripts": {
+    "start": "npx babel-node ./src/backend.js"
+  },
+  "dependencies": {
+    "@layr/component": "^1.0.11",
+    "@layr/component-http-client": "^1.0.7",
+    "@layr/component-http-server": "^1.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "babel-cli": "^6.26.0"
+  }
+}
