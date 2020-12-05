@@ -4,6 +4,8 @@ A collection of my Docker images I use for personal development or school. The c
 
 - neovim-base: Ubuntu install of neovim with some extra packages.
 - spacevim-base: This is a collection of diffrent docker files that build a SpaceVim enviorment in 6 diffrent linux distrabutions.
+- ytdl-layr-backend: A test of the layrjs framwork. This is mainly a backend server that will focus on downloading youtube vidos.
+- ytdl-layr-frontend: A test of the layrjs framework. This is mainly a test for the frontend capabilities of layrjs.
 
 # Building from scratch
 
