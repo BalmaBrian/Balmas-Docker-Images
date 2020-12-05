@@ -1,6 +1,6 @@
 import {Component, primaryIdentifier, attribute, method, expose} from '@layr/component';
 import {ComponentHTTPServer} from '@layr/component-http-server';
-import {exec, spawn} from 'child_process';
+import {spawn} from 'child_process';
 
 class spawnCMD extends Component {
   // We need a primary identifier
@@ -11,8 +11,8 @@ class spawnCMD extends Component {
 
   // The business logic
   @expose({call: true}) @method() spawnCMD() {
-    exec = this.cmd.split(' ');
-    command = exec[0];
+    execute = this.cmd.split(' ');
+    command = execute[0];
     args = exec.splice(1,-1);
     youtubedl = spawn(command, args);
     // youtubedl.on("close", code => {
