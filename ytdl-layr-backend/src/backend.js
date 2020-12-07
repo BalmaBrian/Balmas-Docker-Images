@@ -2,7 +2,7 @@ import {Component, primaryIdentifier, attribute, method, expose} from '@layr/com
 import {ComponentHTTPServer} from '@layr/component-http-server';
 import {spawn} from 'child_process';
 
-class spawnCMD extends Component {
+class spawnCommand extends Component {
   // We need a primary identifier
   @expose({get: true, set: true}) @primaryIdentifier() id;
 
@@ -11,13 +11,16 @@ class spawnCMD extends Component {
 
   // The business logic
   @expose({call: true}) @method() spawnCMD() {
-    execute = this.cmd.split(' ');
-    command = execute[0];
-    args = exec.splice(1,-1);
-    youtubedl = spawn(command, args);
-    // youtubedl.on("close", code => {
-    //   console.log(`child process exited with code ${code}`);
-    // });
+    let execute = this.cmd.split(' ');
+    let command = execute[0];
+    let args = exec.splice(1,-1);
+    let youtubedl = spawn(command, args);
+    youtubedl.on("close", code => {
+      console.log(`child process exited with code ${code}`);
+    });
+  }
+  @expose({call: true}) @method() setCmd(input) {
+    this.cmd = input;
   }
 }
 
